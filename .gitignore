@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+
+# SpikeClip outputs — never commit recordings or clips
+runs/
+clips/
+recordings/
+*.mp4
+*.m4a
+*.ts
+*.srt
+*.log
+spikes.json
+
+# Local config / secrets (the example file is committed instead)
+spikeclip.yaml
+.env
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

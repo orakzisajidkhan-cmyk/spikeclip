@@ -1,0 +1,6 @@
+# Pinned versions verified working together (Python 3.12, ffmpeg 8.x).
+streamlink==8.6.3
+faster-whisper==1.2.1
+websocket-client==1.9.2
+PyYAML==6.0.3
+av==12.3.0

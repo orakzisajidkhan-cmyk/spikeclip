@@ -1,0 +1,33 @@
+# SpikeClip config — copy to spikeclip.yaml and edit.
+# Every value here is a default; any command-line flag overrides it.
+# No channel names, usernames or credentials belong in this file unless
+# you put them there yourself.
+
+# Spike rule: a 10s window is a spike at >= 10 messages AND >= 2x the
+# median of the previous 5 minutes.
+min_count: 10
+min_ratio: 2.0
+window: 10
+baseline_win: 30
+min_gap: 60
+
+# Clip shape
+pre_roll: 15        # seconds before the spike the clip starts
+clip_length: 30     # clip duration in seconds
+width: 1080
+height: 1920
+quality: best       # streamlink quality (e.g. 720p60 to save space)
+whisper_model: tiny # faster-whisper model (tiny is fast on CPU)
+poll_interval: 30   # seconds between live checks while offline
+out_dir: runs
+
+# Per-channel Short layout. Measure the camera box from a frame of that
+# channel's broadcast — a bottom-left camera is a different box than a
+# top-left one. "w:h:x:y" in the 1280x720 source frame.
+# gameplay_crop excludes the minimap, chat panel and HUD.
+channels:
+  example_channel:
+    facecam_crop: "195:141:9:314"
+    gameplay_crop: "590:437:330:141"
+    # hook: "EXAMPLE HOOK"
+    # black_bar: false   # black out the bottom of the gameplay window
